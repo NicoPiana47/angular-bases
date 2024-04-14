@@ -1,0 +1,37 @@
+<h4>Agregar personaje</h4>
+
+<!-- <form [formGroup]="characterForm"  class="row"><
+Así entiende que este form sera el que tenemos en typescript, characterForm.
+-->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre">
+
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control mb-2"
+    placeholder="Poder">
+
+    <!-- formControlName="name"
+    formControlName="power"
+    Luego, agregando en cada input estos, entendera que son las propiedades de nuestro form characterForm y cumplirá sus validadores (en este caso, required.) -->
+
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+
+  <!-- <button type="submit" [disabled]="characterForm.invalid" class="btn btn-primary">
+    Agregar
+  </button>
+  Por último, le podemos debir que el button este deshabilitado hasta que el form sea válido-->
+
+
+  <!-- <pre>{{"11/04/2024" | date}}</pre> Los pipes en html (angular) toman un valor y a partir de eso, cumplen una función. Acá agarra mi fecha y la convierte a Date. -->
+  <!-- <pre>{{character | json}}</pre> Este agarra mi character y lo imprime en forma de json-->
+</form>
